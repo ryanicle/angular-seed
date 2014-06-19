@@ -18,6 +18,7 @@ config(['$routeProvider', function($routeProvider, RestangularProvider) {
   $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
   $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
 
+  // Home
   $routeProvider.when(
     '/home', 
     {
@@ -25,6 +26,7 @@ config(['$routeProvider', function($routeProvider, RestangularProvider) {
     }
   );
 
+  // Videos
   $routeProvider.when(
     '/videos', 
     { 
@@ -32,6 +34,21 @@ config(['$routeProvider', function($routeProvider, RestangularProvider) {
     }
   );
 
+  $routeProvider.when(
+    '/videos/edit/:id',
+    {
+      templateUrl: 'views/videos/edit.html'
+    }
+  );
+
+  $routeProvider.when(
+    '/videos/show/:id',
+    {
+      templateUrl: 'views/videos/show.html'
+    }
+  );
+
+  // Users
   $routeProvider.when(
     '/users/login',
     {

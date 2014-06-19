@@ -1,7 +1,6 @@
 angular.module('frontApp.controllers')
 	.controller(
-		'HomeController', 
-		['$scope', '$http',
+		'HomeController',
 		function($scope, $http){
-			
-}]);
+
+});
