@@ -1,18 +1,28 @@
 <div ng-controller="VideosController">
-<h1>
-	Videos
-</h1>
+	<h1>
+		Videos
+	</h1>
 
-Your name:
-<input type="text" ng-model="username">
-<button ng-click='sayHello()'>greet</button>
-<hr>
-{{greeting}}
+	Your name:
+	<input type="text" ng-model="username">
+	<button ng-click='sayHello()'>greet</button>
+	<hr>
+	{{greeting}}
 
-	<div ng-click="changeAction('edit')">
+	<a ng-click="routeAction('edit', 2)" href="javascript:;">
 		Edit
-	</div>
-	<div ng-click="changeAction('show', 2)">
+	</a>
+	| 
+	<a ng-click="routeAction('show', 2)" href="javascript:;">
 		Preview
-	</div>
+	</a>
+
+	<ul>
+		<li ng-repeat="video in videos">
+			<a href="http://www.youtube.com/watch?v={{video.id.videoId}}">
+				{{video.snippet.title}}			
+			</a>
+		</li>
+	</ul>
+
 </div>

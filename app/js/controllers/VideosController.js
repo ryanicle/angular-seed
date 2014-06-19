@@ -1,5 +1,5 @@
 angular.module('frontApp.controllers').controller('VideosController', 
-	function($scope, $http, $location){
+	function($scope, $http, $location, YouTubeService){
 		$scope.username = 'World';
 
 		console.log($scope.username);
@@ -8,11 +8,18 @@ angular.module('frontApp.controllers').controller('VideosController',
 	    $scope.greeting = 'Hello ' + $scope.username + '!';
 	  };
 
-	  $scope.changeAction = function(view, id) {
+	  $scope.routeAction = function(view, id) {
 	  		var url = 'videos/' + view;
-	  		if (id != '') {
+	  		if (angular.isDefined(id)) {
 	  			url += '/' + id;
+	  		} else {
+	  			url = 'videos';
 	  		}
 	  		$location.url(url);
 	  }
+
+	  YouTubeService.getList().then(function(data) {
+	  	$scope.videos = data.items;
+	  	console.log(data.items);
+	  })
 });

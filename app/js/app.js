@@ -9,11 +9,14 @@ angular.module('frontApp', [
   'frontApp.directives',
   'frontApp.controllers',
   'restangular',
-  'directive.g+signin'
+  'directive.g+signin',
+  'ui.bootstrap'
 ]).
-config(['$routeProvider', function($routeProvider, RestangularProvider) {
+config(['$routeProvider', 'RestangularProvider', 
+  function($routeProvider, RestangularProvider) {
 
-  
+  RestangularProvider.setBaseUrl('http://www.global.com');
+  RestangularProvider.setRequestSuffix('.json');
 
   $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
   $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
@@ -56,5 +59,5 @@ config(['$routeProvider', function($routeProvider, RestangularProvider) {
     }
   );
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/home'});
 }]);
