@@ -1,5 +1,5 @@
 angular.module('frontApp.controllers').controller('VideosController', 
-	function($scope, $http, $location, YouTubeService){
+	function($scope, $http, $location, YouTubeVideoService){
 		$scope.username = 'World';
 
 		console.log($scope.username);
@@ -18,7 +18,7 @@ angular.module('frontApp.controllers').controller('VideosController',
 	  		$location.url(url);
 	  }
 
-	  YouTubeService.getList().then(function(data) {
+	  YouTubeVideoService.getList().then(function(data) {
 	  	$scope.videos = data.items;
 	  	console.log(data.items);
 	  })

@@ -1,5 +1,5 @@
 angular.module('frontApp')
-	.factory('YouTubeService', function($http, $q) {
+	.factory('YouTubeVideoService', function($http, $q) {
 		return {
 			getList: function() {
 				return $http.get('https://www.googleapis.com/youtube/v3/search', {
