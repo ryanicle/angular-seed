@@ -2,7 +2,7 @@
 
 /* Filters */
 
-var app = angular.module('frontApp.filters', []);
+var app = angular.module('filters', []);
 
 /**
  * App Version

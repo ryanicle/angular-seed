@@ -4,10 +4,10 @@
 // Declare app level module which depends on filters, and services
 angular.module('frontApp', [
   'ngRoute',
-  'frontApp.filters',
-  'frontApp.services',
-  'frontApp.directives',
-  'frontApp.controllers',
+  'filters',
+  'services',
+  'directives',
+  'controllers',
   'restangular',
   'directive.g+signin',
   'ui.bootstrap'

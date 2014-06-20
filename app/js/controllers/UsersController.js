@@ -1,4 +1,4 @@
-angular.module('frontApp.controllers')
+angular.module('controllers')
 	.controller('UsersController', 
 	function($scope, $http){
 		$scope.$on('event:google-plus-signin-success', function (event, authResult) {

@@ -1,4 +1,6 @@
-angular.module('frontApp.controllers').controller('VideosController', 
+angular.module('controllers', []).
+	
+	controller('VideosController', 
 	function($scope, $http, $location, YouTubeVideoService){
 		$scope.username = 'World';
 
